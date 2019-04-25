@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <Button
+        android:textColor="@color/bg_btn_one"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:text="样式一：点击改变字体颜色"
+        android:gravity="center"
+        />
+    <Button
+        android:background="@drawable/bg_btn_two"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:text="样式二：点击改变背景颜色"
+        android:gravity="center"
+        />
+    <Button
+        android:background="@drawable/bg_btn_two"
+        android:textColor="@color/bg_btn_one"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:text="样式三：改变背景色同时改变字体色"
+        android:gravity="center"
+        />
+    <CheckBox
+        android:layout_marginTop="20dp"
+        android:id="@+id/btn"
+        android:background="@drawable/bg_check_three"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:text="Checked：点击后背景状态长存"
+        android:gravity="center"
+        />
+    <EditText
+        android:textColor="@color/bg_edittext__one"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:text="焦点样式：改变背景色同时改变字体色"
+        android:gravity="center"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:text="使上面失去焦点"
+        android:background="@drawable/rect_rounded_fill"
+        android:gravity="center"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:text="shape渐变"
+        android:gravity="center"
+        android:background="@drawable/rect_gradient_linear_diagonal"/>
+
+
+</LinearLayout>
