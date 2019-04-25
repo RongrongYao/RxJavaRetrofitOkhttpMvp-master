@@ -9,7 +9,10 @@ import android.view.ViewGroup;
 import com.example.gs.mvpdemo.R;
 
 public class DashboardFragment extends Fragment {
-    public View onCreateView (LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public DashboardFragment() {
+    }
+
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View dashboardLayout = inflater.inflate(R.layout.fragment_dashboard, container, false);
         return dashboardLayout;
     }

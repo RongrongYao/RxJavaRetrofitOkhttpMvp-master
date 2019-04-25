@@ -9,6 +9,12 @@ import android.view.ViewGroup;
 import com.example.gs.mvpdemo.R;
 
 public class NotificationFragment extends Fragment {
+
+    public NotificationFragment(){
+
+    }
+
+
     public View onCreateView (LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View notificationLayout = inflater.inflate(R.layout.fragment_notification, container, false);
         return notificationLayout;
