@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 
 import com.example.gs.mvpdemo.R;
 
+
 public class HeadlineFragment extends Fragment {
 
     public HeadlineFragment(){
