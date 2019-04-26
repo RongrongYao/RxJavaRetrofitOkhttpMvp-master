@@ -20,6 +20,7 @@ public class HomeFragment extends Fragment {
 
     private TabLayout mViewpagerTab;
     private ViewPager mNewsViewpager;
+    private View homeLayout;
 
     List<Fragment> list_fragment = new ArrayList<>();
     List<String> list_Title = new ArrayList<>();
@@ -49,18 +50,18 @@ public class HomeFragment extends Fragment {
             list_fragment.add(new TechnologyFragment());
         }
         if (list_Title.size() == 0) {
-            list_Title.add("111");
-            list_Title.add("222");
-            list_Title.add("333");
-            list_Title.add("444");
-            list_Title.add("555");
-            list_Title.add("666");
-            list_Title.add("777");
-            list_Title.add("888");
-            list_Title.add("999");
-            list_Title.add("zzz");
-            list_Title.add("xxx");
-            list_Title.add("ccc");
+            list_Title.add("Headline");
+            list_Title.add("Recreation");
+            list_Title.add("Sport");
+            list_Title.add("Technology");
+            list_Title.add("Headline");
+            list_Title.add("Recreation");
+            list_Title.add("Sport");
+            list_Title.add("Technology");
+            list_Title.add("Headline");
+            list_Title.add("Recreation");
+            list_Title.add("Sport");
+            list_Title.add("Technology");
         }
     }
 
@@ -68,7 +69,7 @@ public class HomeFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        View homeLayout = inflater.inflate(R.layout.fragment_home, container, false);
+       homeLayout = inflater.inflate(R.layout.fragment_home, container, false);
         //找到控件
         mViewpagerTab = homeLayout.findViewById(R.id.home_viewpager_tab);
         mNewsViewpager = homeLayout.findViewById(R.id.home_viewpager);
@@ -105,6 +106,8 @@ public class HomeFragment extends Fragment {
 
         return homeLayout;
     }
+
+
 
 
     @Override
