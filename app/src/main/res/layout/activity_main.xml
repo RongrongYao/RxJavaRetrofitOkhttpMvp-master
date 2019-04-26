@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:fitsSystemWindows="true">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:paddingLeft="24dp"
-        android:paddingRight="24dp"
-        android:paddingTop="56dp">
+        android:paddingTop="56dp"
+        android:paddingRight="24dp">
 
 
         <ImageView
@@ -18,15 +18,15 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginBottom="24dp"
-            android:visibility="visible"
-            android:src="@drawable/girl" />
+            android:src="@mipmap/ic_launcher"
+            android:visibility="visible" />
 
         <!-- Email Label -->
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginTop="8dp">
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp">
 
             <EditText
                 android:id="@+id/input_email"
@@ -40,8 +40,8 @@
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginTop="8dp">
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp">
 
             <EditText
                 android:id="@+id/input_password"
@@ -55,8 +55,8 @@
             android:id="@+id/btn_login"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp"
             android:layout_marginTop="24dp"
+            android:layout_marginBottom="24dp"
             android:padding="12dp"
             android:text="Login" />
 
@@ -68,36 +68,41 @@
             android:gravity="center"
             android:text="靓丽的妹子,是不是你的菜"
             android:textSize="16dip" />
+
         <Button
             android:id="@+id/btn_register"
-            android:onClick="click"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="点击注册"/>
+            android:onClick="click"
+            android:text="点击注册" />
+
         <Button
             android:id="@+id/btn_recyclerView"
-            android:onClick="click"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="RecyclerView"/>
+            android:onClick="click"
+            android:text="RecyclerView" />
+
         <Button
             android:id="@+id/btn_fragment"
-            android:onClick="click"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Fragment"/>
+            android:onClick="click"
+            android:text="Fragment" />
+
         <Button
             android:id="@+id/btn_fragment1"
-            android:onClick="click"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Fragment+Viewpager"/>
+            android:onClick="click"
+            android:text="Fragment+Viewpager" />
+
         <Button
             android:id="@+id/btn_selector"
-            android:onClick="click"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Selector"/>
+            android:onClick="click"
+            android:text="Selector" />
 
 
     </LinearLayout>

@@ -1,4 +1,4 @@
-package com.example.gs.mvpdemo.url;
+package com.example.gs.mvpdemo.http;
 
 /**
  * Created by GaoSheng on 2016/9/14.

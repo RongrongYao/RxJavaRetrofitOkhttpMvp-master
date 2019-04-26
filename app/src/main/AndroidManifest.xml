@@ -13,16 +13,16 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name="com.example.gs.mvpdemo.activity.LoginActivity">
-
-        </activity>
-        <activity android:name="com.example.gs.mvpdemo.activity.RegisterActivity"></activity>
-        <activity android:name="com.example.gs.mvpdemo.activity.RecyclerViewActivity"></activity>
-        <activity android:name="com.example.gs.mvpdemo.activity.FragmentActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name="com.example.gs.mvpdemo.activity.RegisterActivity"></activity>
+        <activity android:name="com.example.gs.mvpdemo.activity.RecyclerViewActivity"></activity>
+        <activity android:name="com.example.gs.mvpdemo.activity.FragmentActivity">
+
         </activity>
         <activity android:name="com.example.gs.mvpdemo.activity.FragmentViewpagerActivity"></activity>
         <activity android:name="com.example.gs.mvpdemo.activity.SelectorActivity">

@@ -18,11 +18,13 @@ import butterknife.ButterKnife;
 
 public class LoginActivity extends BaseActivity<LoginPresenter> implements LoginContract.LoginView {
 
+    //账号
+    @BindView(R.id.input_email)
+    EditText inputEmail;
+    //密码
+    @BindView(R.id.input_password)
+    EditText inputPassword;
 
-    @BindView(R.id.input_email)   //账号
-            EditText inputEmail;
-    @BindView(R.id.input_password) //密码
-            EditText inputPassword;
     @BindView(R.id.btn_login)
     AppCompatButton btnLogin;
 
@@ -109,13 +111,13 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
                 startActivity(intent3);
                 break;
             case R.id.btn_fragment1:
-                Intent intent4= new Intent();
+                Intent intent4 = new Intent();
                 intent4.setClass(this, FragmentViewpagerActivity.class);
                 startActivity(intent4);
                 break;
             case R.id.btn_selector:
-                Intent intent5= new Intent();
-                intent5.setClass(this,SelectorActivity.class);
+                Intent intent5 = new Intent();
+                intent5.setClass(this, SelectorActivity.class);
                 startActivity(intent5);
                 break;
 

@@ -39,25 +39,8 @@ public class HomeFragment extends Fragment {
             list_fragment.add(new SportFragment());
             list_fragment.add(new TechnologyFragment());
 
-            list_fragment.add(new HeadlineFragment());
-            list_fragment.add(new RecreationFragment());
-            list_fragment.add(new SportFragment());
-            list_fragment.add(new TechnologyFragment());
-
-            list_fragment.add(new HeadlineFragment());
-            list_fragment.add(new RecreationFragment());
-            list_fragment.add(new SportFragment());
-            list_fragment.add(new TechnologyFragment());
         }
         if (list_Title.size() == 0) {
-            list_Title.add("Headline");
-            list_Title.add("Recreation");
-            list_Title.add("Sport");
-            list_Title.add("Technology");
-            list_Title.add("Headline");
-            list_Title.add("Recreation");
-            list_Title.add("Sport");
-            list_Title.add("Technology");
             list_Title.add("Headline");
             list_Title.add("Recreation");
             list_Title.add("Sport");
@@ -115,5 +98,7 @@ public class HomeFragment extends Fragment {
         super.onResume();
 //        mNewsViewpager.setCurrentItem(2);
     }
+
+
 }
 

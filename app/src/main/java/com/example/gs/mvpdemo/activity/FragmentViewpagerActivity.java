@@ -19,40 +19,38 @@ import java.util.ArrayList;
 public class FragmentViewpagerActivity extends AppCompatActivity {
 
     private ViewPager mViewPager;
-    private  BottomNavigationView bottomNavigationView;
+    private BottomNavigationView bottomNavigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fragment_viewpager);
-        mViewPager=(ViewPager) findViewById(R.id.mViewPager);//获取到ViewPager
-        bottomNavigationView=findViewById(R.id.navigation);
+        mViewPager = (ViewPager) findViewById(R.id.mViewPager);//获取到ViewPager
+        bottomNavigationView = findViewById(R.id.navigation);
 
         //设置点击监听
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId())
-                {
-                    //根据navagatin.xml中item的id进行case
-                    case R.id.navigation_home:
-                        mViewPager.setCurrentItem(0);
-                        //跳到对应ViewPager的page
-                        break;
-                    case R.id.navigation_dashboard:
-                        mViewPager.setCurrentItem(1);
+        bottomNavigationView.setOnNavigationItemSelectedListener(
+                new BottomNavigationView.OnNavigationItemSelectedListener() {
+                    @Override
+                    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                        switch (item.getItemId()) {
+                            //根据navagatin.xml中item的id进行case
+                            case R.id.navigation_home:
+                                mViewPager.setCurrentItem(0);
+                                //跳到对应ViewPager的page
+                                break;
+                            case R.id.navigation_dashboard:
+                                mViewPager.setCurrentItem(1);
 
-                        break;
-                    case R.id.navigation_notifications:
-                        mViewPager.setCurrentItem(2);
+                                break;
+                            case R.id.navigation_notifications:
+                                mViewPager.setCurrentItem(2);
 
-                        break;
-                }
-                return false;
-            }
-        });
-
-
+                                break;
+                        }
+                        return false;
+                    }
+                });
 
 
         //ViewPager的监听
@@ -75,14 +73,14 @@ public class FragmentViewpagerActivity extends AppCompatActivity {
         });
 
         //底部导航栏有几项就有几个Fragment
-        final ArrayList<Fragment> fgLists=new ArrayList<>(3);
+        final ArrayList<Fragment> fgLists = new ArrayList<>(3);
         fgLists.add(new HomeFragment());
         fgLists.add(new DashboardFragment());
         fgLists.add(new NotificationFragment());
 
 
         //设置适配器用于装载Fragment
-        FragmentPagerAdapter mPagerAdapter=new FragmentPagerAdapter(getSupportFragmentManager()) {
+        FragmentPagerAdapter mPagerAdapter = new FragmentPagerAdapter(getSupportFragmentManager()) {
             @Override
             public Fragment getItem(int position) {
                 return fgLists.get(position);  //得到Fragment

@@ -2,7 +2,6 @@ package com.example.gs.mvpdemo.http;
 
 
 import com.example.gs.mvpdemo.ProApplication;
-import com.example.gs.mvpdemo.url.UrlHelper;
 import com.example.gs.mvpdemo.utils.NetworkUtil;
 import com.example.gs.mvpdemo.utils.SpUtils;
 

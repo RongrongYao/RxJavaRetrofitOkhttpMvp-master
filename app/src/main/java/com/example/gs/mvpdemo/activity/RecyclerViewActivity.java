@@ -24,9 +24,9 @@ public class RecyclerViewActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rv);
-       initData();
+        initData();
 
-        rv=(RecyclerView) findViewById(R.id.recyclerView);
+        rv = (RecyclerView) findViewById(R.id.recyclerView);
         rv.setLayoutManager(new LinearLayoutManager(this));
         //rv.setAdapter(new NormalAdapter(data));
 
@@ -39,12 +39,12 @@ public class RecyclerViewActivity extends AppCompatActivity {
             @Override
             protected void convert(VH holder, Object data, final int position) {
 
-                holder.setText(R.id.title,data.toString());
+                holder.setText(R.id.title, data.toString());
                 holder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Toast.makeText(RecyclerViewActivity.this,"aaa",Toast.LENGTH_SHORT).show();
-                        System.out.println(position+"被点击了");
+                        Toast.makeText(RecyclerViewActivity.this, "aaa", Toast.LENGTH_SHORT).show();
+                        System.out.println(position + "被点击了");
                     }
                 });
 
@@ -52,7 +52,7 @@ public class RecyclerViewActivity extends AppCompatActivity {
 
             @Override
             public void onBindViewHolder(@NonNull VH viewHolder, int i) {
-                convert(viewHolder,data.get(i),i);
+                convert(viewHolder, data.get(i), i);
             }
         });
 
@@ -60,9 +60,8 @@ public class RecyclerViewActivity extends AppCompatActivity {
     }
 
     private void initData() {
-       data = new ArrayList<String>();
-        for (int i = 'A'; i < 'z'; i++)
-        {
+        data = new ArrayList<String>();
+        for (int i = 'A'; i < 'z'; i++) {
             data.add("" + (char) i);
         }
     }

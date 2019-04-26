@@ -21,8 +21,7 @@ import com.example.gs.mvpdemo.transformer.CommonTransformer;
 public class LoginModel extends BaseModel {
     private boolean isLogin = false;
 
-    public boolean login(@NonNull String username, @NonNull String pwd, @NonNull final InfoHint
-            infoHint) {
+    public boolean login(@NonNull String username, @NonNull String pwd, @NonNull final InfoHint infoHint) {
 
         if (infoHint == null)
             throw new RuntimeException("InfoHint不能为空");

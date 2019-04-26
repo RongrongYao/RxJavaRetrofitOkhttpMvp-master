@@ -21,12 +21,13 @@ public interface HttpService {
     //登录接口
     @FormUrlEncoded
     @POST("demo/login")
-    Observable<BaseHttpResult<LoginBean>> login(@Field("userName") String username, @Field
-            ("passWord") String pwd);
+    Observable<BaseHttpResult<LoginBean>> login(@Field("userName") String username,
+                                                @Field("passWord") String pwd);
 
     //注册接口
     @FormUrlEncoded
     @POST("demo/register")
-    Observable<BaseHttpResult<RegisterBean>> register(@Field("userName")String username,@Field("passWord")String pwd);
+    Observable<BaseHttpResult<RegisterBean>> register(@Field("userName") String username,
+                                                      @Field("passWord") String pwd);
 
 }

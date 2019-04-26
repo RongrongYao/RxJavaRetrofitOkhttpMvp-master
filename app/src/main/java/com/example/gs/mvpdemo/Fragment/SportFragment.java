@@ -17,26 +17,29 @@ public class SportFragment extends android.support.v4.app.Fragment {
     private View sportLayout;
     private List<String> data;
 
-    public SportFragment(){
+    public SportFragment() {
 
     }
-    public View onCreateView (LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         sportLayout = inflater.inflate(R.layout.fragment_sport, container, false);
         initData();
         initRecyclerView();
         return sportLayout;
     }
+
     private void initData() {
-        data=new ArrayList<>();
-        for(int i='A';i<'z';i++) {
+        data = new ArrayList<>();
+        for (int i = 'A'; i < 'z'; i++) {
             data.add("i");
 
         }
     }
+
     private void initRecyclerView() {
-        RecyclerView recyclerView=sportLayout.findViewById(R.id.recyclerViewSport);
+        RecyclerView recyclerView = sportLayout.findViewById(R.id.recyclerViewSport);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        recyclerView.setAdapter(new NormalAdapter(getActivity(),data));
+        recyclerView.setAdapter(new NormalAdapter(getActivity(), data));
     }
 
 

@@ -8,16 +8,11 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
-import android.widget.FrameLayout;
 
 import com.example.gs.mvpdemo.Fragment.DashboardFragment;
 import com.example.gs.mvpdemo.Fragment.HomeFragment;
 import com.example.gs.mvpdemo.Fragment.NotificationFragment;
 import com.example.gs.mvpdemo.R;
-import com.scwang.smartrefresh.layout.SmartRefreshLayout;
-import com.scwang.smartrefresh.layout.api.RefreshLayout;
-import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener;
-import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 
 
 public class FragmentActivity extends AppCompatActivity {
@@ -36,7 +31,7 @@ public class FragmentActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fragment);
-        initRefresh();
+
 
         initBottomNavigation();
 
@@ -75,8 +70,8 @@ public class FragmentActivity extends AppCompatActivity {
         switch (i) {
             case 0:
                 if (homeFragment == null) {
-                homeFragment = new HomeFragment();
-            }
+                    homeFragment = new HomeFragment();
+                }
                 switchFragment(homeFragment).commit();
                 break;
             case 1:
@@ -115,23 +110,6 @@ public class FragmentActivity extends AppCompatActivity {
         currentFragment = targetFragment;
         return transaction;
     }
-    private void initRefresh() {
-        SmartRefreshLayout refreshLayout = findViewById(R.id.smartRefreshLayout);
-        //刷新的监听事件
-        refreshLayout.setOnRefreshListener(new OnRefreshListener() {
-            @Override
-            public void onRefresh(@NonNull RefreshLayout refreshLayout) {
-                //请求数据
-                refreshLayout.finishRefresh();  //刷新完成
-            }
-        });
-        //加载的监听事件
-        refreshLayout.setOnLoadMoreListener(new OnLoadMoreListener() {
-            @Override
-            public void onLoadMore(@NonNull RefreshLayout refreshLayout) {
-                refreshLayout.finishLoadMore();      //加载完成
-                refreshLayout.finishLoadMoreWithNoMoreData();  //全部加载完成,没有数据了调用此方法
-            }
-        });
-    }
+
+
 }
