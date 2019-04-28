@@ -1,11 +1,13 @@
 package com.example.gs.mvpdemo.Fragment;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,6 +34,7 @@ public class HomeFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.e(">>>>>>","fra----onCreate");
 
         if (list_fragment.size() == 0) {
             list_fragment.add(new HeadlineFragment());
@@ -52,6 +55,7 @@ public class HomeFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
+        Log.e(">>>>>>","fra----onCreateview");
        homeLayout = inflater.inflate(R.layout.fragment_home, container, false);
         //找到控件
         mViewpagerTab = homeLayout.findViewById(R.id.home_viewpager_tab);
@@ -97,8 +101,57 @@ public class HomeFragment extends Fragment {
     public void onResume() {
         super.onResume();
 //        mNewsViewpager.setCurrentItem(2);
+        Log.e(">>>>>>","fra---- onResume");
     }
 
+    @Override
+    public void onStart() {
+        super.onStart();
+        Log.e(">>>>>>","fra---- onStart");
+    }
 
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        Log.e(">>>>>>","fra---- onSaveInstanceState");
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        Log.e(">>>>>>","fra---- onAttach");
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        Log.e(">>>>>>","fra---- onActivityCreated");
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        Log.e(">>>>>>","fra---- onDestroy");
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        Log.e(">>>>>>","fra---- onPause");
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        Log.e(">>>>>>","fra---- onStop");
+
+    }
+
+    @Override
+    public void onViewStateRestored(@Nullable Bundle savedInstanceState) {
+        super.onViewStateRestored(savedInstanceState);
+        Log.e(">>>>>>","fra---- onViewStateRestored");
+
+    }
 }
 

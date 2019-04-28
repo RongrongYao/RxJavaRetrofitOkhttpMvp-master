@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.MenuItem;
 
 import com.example.gs.mvpdemo.Fragment.DashboardFragment;
@@ -30,6 +31,7 @@ public class FragmentActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.e(">>>>>>","act----onCreate");
         setContentView(R.layout.activity_fragment);
 
 
@@ -111,5 +113,39 @@ public class FragmentActivity extends AppCompatActivity {
         return transaction;
     }
 
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.e(">>>>>>","act----onRestart");
+    }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.e(">>>>>>","act----onResume");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.e(">>>>>>","act----onPause");
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        Log.e(">>>>>>","act----onSaveInstanceState");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.e(">>>>>>","act----onStop");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.e(">>>>>>","act----onDestroy");
+    }
 }
