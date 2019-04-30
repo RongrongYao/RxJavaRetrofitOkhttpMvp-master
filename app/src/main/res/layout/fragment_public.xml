@@ -1,49 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="match_parent">
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        >
+        android:orientation="vertical">
+
         <android.widget.Toolbar
             android:id="@+id/toolbar_public"
-            app:contentInsetLeft="0dp"
-            app:contentInsetStart="0dp"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="#f00">
+            android:background="#f00"
+            app:contentInsetLeft="0dp"
+            app:contentInsetStart="0dp">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center_vertical">
+
                 <ImageView
                     android:layout_width="25dp"
                     android:layout_height="25dp"
-                    android:src="@drawable/arrowleft"/>
+                    android:src="@drawable/arrowleft" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="返回"
-                    android:textSize="22dp"
-                    android:textColor="#fff"/>
+                    android:textColor="#fff"
+                    android:textSize="22dp" />
+
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    android:layout_gravity="center"
 
-                    android:textSize="22dp"
+                    android:layout_weight="1"
                     android:textColor="#fff"
-                    android:layout_gravity="center"/>
+                    android:textSize="22dp" />
+
                 <ImageView
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:src="@drawable/content"
-                    android:layout_marginRight="2dp"/>
+                    android:layout_marginRight="2dp"
+                    android:src="@drawable/content" />
             </LinearLayout>
 
         </android.widget.Toolbar>
@@ -51,8 +56,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            >
+            android:layout_margin="8dp">
 
             <EditText
                 android:id="@+id/edit"
@@ -89,6 +93,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"></Spinner>
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -123,8 +128,8 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="请输入发生地点"
-                android:background="@null"/>
+                android:background="@null"
+                android:hint="请输入发生地点" />
         </LinearLayout>
 
         <LinearLayout
@@ -147,7 +152,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
-            android:background="@color/grey"/>
+            android:background="@color/grey" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -171,7 +176,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
-            android:background="@color/grey"/>
+            android:background="@color/grey" />
 
         <Button
             android:layout_width="300dp"
@@ -182,8 +187,8 @@
             android:fallbackLineSpacing="true"
             android:padding="8dp"
             android:text="发    布"
-            android:textSize="22dp"
-            android:textColor="#fff"/>
+            android:textColor="#fff"
+            android:textSize="22dp" />
 
 
     </LinearLayout>
