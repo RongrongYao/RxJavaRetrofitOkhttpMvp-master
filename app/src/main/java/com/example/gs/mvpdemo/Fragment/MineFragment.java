@@ -20,7 +20,7 @@ public class MineFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        mineLayout = inflater.inflate(R.layout.fragment_mine, container, false);
+        mineLayout = inflater.inflate(R.layout.fragment_mine1, container, false);
         return mineLayout;
     }
 }

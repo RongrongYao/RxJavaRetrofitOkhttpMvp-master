@@ -69,7 +69,7 @@ public class HomeFragment extends Fragment {
 
         handler.sendEmptyMessageDelayed(1, 2000);
         setListener();
-
+        recyclerView.setFocusable(false);
         return view;
     }
 
