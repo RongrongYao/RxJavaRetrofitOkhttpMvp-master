@@ -103,9 +103,10 @@
                 android:hint="所在位置" />
         </LinearLayout>
 
-        <view
+        <View
             android:layout_width="match_parent"
-            android:layout_height="0.5dp"/>
+            android:layout_height="0.5dp"
+            android:background="@color/grey"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -126,9 +127,10 @@
                 android:text="最多上传九张图片" />
         </LinearLayout>
 
-        <view
+        <View
             android:layout_width="match_parent"
-            android:layout_height="0.5dp" />
+            android:layout_height="0.5dp"
+            android:background="@color/grey"/>
 
         <Button
             android:layout_width="300dp"

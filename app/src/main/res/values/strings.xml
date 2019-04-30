@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">MvpDemo</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_home">首页</string>
+    <string name="title_news">新闻</string>
+    <string name="title_public">发布</string>
+    <string name="title_notifications">消息</string>
+    <string name="title_mine">我的</string>
 </resources>

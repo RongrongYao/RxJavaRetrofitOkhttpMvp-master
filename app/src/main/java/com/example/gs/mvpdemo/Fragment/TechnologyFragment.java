@@ -14,7 +14,7 @@ public class TechnologyFragment extends android.support.v4.app.Fragment {
     }
 
     public View onCreateView (LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View homeLayout = inflater.inflate(R.layout.fragment_dashboard, container, false);
+        View homeLayout = inflater.inflate(R.layout.fragment_notification, container, false);
         return homeLayout;
     }
 }

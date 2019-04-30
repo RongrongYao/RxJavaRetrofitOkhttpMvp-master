@@ -1,31 +1,46 @@
 package com.example.gs.mvpdemo.Fragment;
 
-import android.content.Context;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
+import android.os.Handler;
+import android.os.Message;
 import android.support.annotation.Nullable;
-import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
-import android.util.Log;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.gs.mvpdemo.R;
-import com.example.gs.mvpdemo.adapter.TabFragmentPagerAdapter;
+import com.example.gs.mvpdemo.adapter.MainNewsAdapter;
+import com.example.gs.mvpdemo.adapter.ViewPagerAdapter;
+import com.example.gs.mvpdemo.bean.StoriesEntity;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class HomeFragment extends Fragment {
 
-    private TabLayout mViewpagerTab;
-    private ViewPager mNewsViewpager;
-    private View homeLayout;
+    private ViewPager banner;
 
-    List<Fragment> list_fragment = new ArrayList<>();
-    List<String> list_Title = new ArrayList<>();
+    private List<Integer> data;
+    private List<StoriesEntity> entityList;
+
+    private int[] icon = {R.drawable.photo1, R.drawable.photo2, R.drawable.photo3};
+    private int currentPage = 0;
+    private boolean viewPageScrollStatus = false;
+
+    Handler handler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            if (!viewPageScrollStatus) {
+                banner.setCurrentItem(++currentPage);
+            }
+            handler.sendEmptyMessageDelayed(1, 2000);
+        }
+
+    };
 
     public HomeFragment() {
 
@@ -34,124 +49,69 @@ public class HomeFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.e(">>>>>>","fra----onCreate");
+        data = new ArrayList<>();
+        data.add(R.drawable.photo1);
+        data.add(R.drawable.photo2);
+        data.add(R.drawable.photo3);
 
-        if (list_fragment.size() == 0) {
-            list_fragment.add(new HeadlineFragment());
-            list_fragment.add(new RecreationFragment());
-            list_fragment.add(new SportFragment());
-            list_fragment.add(new TechnologyFragment());
 
+        initDatas();
+    }
+
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_home, container, false);
+        RecyclerView recyclerView = view.findViewById(R.id.recyclerViewlist);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        recyclerView.setAdapter(new MainNewsAdapter(getActivity(), entityList));
+
+        banner = view.findViewById(R.id.banner);
+        banner.setAdapter(new ViewPagerAdapter(data));
+
+        handler.sendEmptyMessageDelayed(1, 2000);
+        setListener();
+
+        return view;
+    }
+
+    private void initDatas() {
+        entityList = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            StoriesEntity data = new StoriesEntity();
+
+            entityList.add(data);
         }
-        if (list_Title.size() == 0) {
-            list_Title.add("Headline");
-            list_Title.add("Recreation");
-            list_Title.add("Sport");
-            list_Title.add("Technology");
-        }
-    }
-
-    @Nullable
-    @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
-                             @Nullable Bundle savedInstanceState) {
-        Log.e(">>>>>>","fra----onCreateview");
-       homeLayout = inflater.inflate(R.layout.fragment_home, container, false);
-        //找到控件
-        mViewpagerTab = homeLayout.findViewById(R.id.home_viewpager_tab);
-        mNewsViewpager = homeLayout.findViewById(R.id.home_viewpager);
-
-        TabFragmentPagerAdapter adapter = new TabFragmentPagerAdapter(
-                getActivity().getSupportFragmentManager(), list_fragment, list_Title);
-
-        //viewpager 加载adapter
-        mNewsViewpager.setAdapter(adapter);
-
-//        mNewsViewpager.setAdapter(new FragmentStatePagerAdapter(getActivity().getSupportFragmentManager()) {
-//            @Override
-//            public Fragment getItem(int position) {
-//                return list_fragment.get(position);
-//            }
-//
-//            @Override
-//            public int getCount() {
-//                return list_fragment.size();
-//            }
-//
-//            @Override
-//            public void destroyItem(ViewGroup container, int position, Object object) {
-//                super.destroyItem(container, position, object);
-//            }
-//
-//            @Override
-//            public CharSequence getPageTitle(int position) {
-//                return list_Title.get(position);
-//            }
-//        });
-        // TableLayout加载viewpager
-        mViewpagerTab.setupWithViewPager(mNewsViewpager);
-
-        return homeLayout;
     }
 
 
+    private void setListener() {
+        banner.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
 
+            @Override
+            public void onPageScrolled(int i, float v, int i1) {
 
-    @Override
-    public void onResume() {
-        super.onResume();
-//        mNewsViewpager.setCurrentItem(2);
-        Log.e(">>>>>>","fra---- onResume");
-    }
+            }
 
-    @Override
-    public void onStart() {
-        super.onStart();
-        Log.e(">>>>>>","fra---- onStart");
-    }
+            @Override
+            public void onPageSelected(int position) {
+                //头尾衔接，无限循环
+                if (position == data.size() - 1) {
+                    currentPage = 0;
+                } else {
+                    currentPage = position;
+                }
 
-    @Override
-    public void onSaveInstanceState(@NonNull Bundle outState) {
-        super.onSaveInstanceState(outState);
-        Log.e(">>>>>>","fra---- onSaveInstanceState");
-    }
+            }
 
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        Log.e(">>>>>>","fra---- onAttach");
-    }
+            @Override
+            public void onPageScrollStateChanged(int state) {
+                if (state == ViewPager.SCROLL_STATE_IDLE) {
+                    viewPageScrollStatus = false;
+                    banner.setCurrentItem(currentPage, false);
+                } else {
+                    viewPageScrollStatus = true;
+                }
 
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        Log.e(">>>>>>","fra---- onActivityCreated");
-    }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        Log.e(">>>>>>","fra---- onDestroy");
-    }
-
-    @Override
-    public void onPause() {
-        super.onPause();
-        Log.e(">>>>>>","fra---- onPause");
-    }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-        Log.e(">>>>>>","fra---- onStop");
-
-    }
-
-    @Override
-    public void onViewStateRestored(@Nullable Bundle savedInstanceState) {
-        super.onViewStateRestored(savedInstanceState);
-        Log.e(">>>>>>","fra---- onViewStateRestored");
-
+            }
+        });
     }
 }
-

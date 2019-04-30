@@ -10,9 +10,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.MenuItem;
 
-import com.example.gs.mvpdemo.Fragment.DashboardFragment;
-import com.example.gs.mvpdemo.Fragment.HomeFragment;
+import com.example.gs.mvpdemo.Fragment.MineFragment;
 import com.example.gs.mvpdemo.Fragment.NotificationFragment;
+import com.example.gs.mvpdemo.Fragment.NewsFragment;
+import com.example.gs.mvpdemo.Fragment.HomeFragment;
+import com.example.gs.mvpdemo.Fragment.PublicFragment;
 import com.example.gs.mvpdemo.R;
 
 
@@ -21,8 +23,10 @@ public class FragmentActivity extends AppCompatActivity {
     private BottomNavigationView mBottomNavigationView;
 
     private HomeFragment homeFragment;
-    private DashboardFragment dashboardFragment;
+    private NewsFragment newsFragment;
+    private PublicFragment publicFragment;
     private NotificationFragment notificationFragment;
+    private MineFragment mineFragment;
     private FragmentManager fragmentManager;
 
 
@@ -53,11 +57,17 @@ public class FragmentActivity extends AppCompatActivity {
                             case R.id.navigation_home:
                                 setFragmentPosition(0);
                                 break;
-                            case R.id.navigation_dashboard:
+                            case R.id.navigation_news:
                                 setFragmentPosition(1);
                                 break;
-                            case R.id.navigation_notifications:
+                            case R.id.navigation_public:
                                 setFragmentPosition(2);
+                                break;
+                            case R.id.navigation_notifications:
+                                setFragmentPosition(3);
+                                break;
+                            case R.id.navigation_mine:
+                                setFragmentPosition(4);
                                 break;
 
                             default:
@@ -77,16 +87,28 @@ public class FragmentActivity extends AppCompatActivity {
                 switchFragment(homeFragment).commit();
                 break;
             case 1:
-                if (dashboardFragment == null) {
-                    dashboardFragment = new DashboardFragment();
+                if (newsFragment == null) {
+                    newsFragment = new NewsFragment();
                 }
-                switchFragment(dashboardFragment).commit();
+                switchFragment(newsFragment).commit();
                 break;
             case 2:
+                if (publicFragment == null) {
+                    publicFragment = new PublicFragment();
+                }
+                switchFragment(publicFragment).commit();
+                break;
+            case 3:
                 if (notificationFragment == null) {
                     notificationFragment = new NotificationFragment();
                 }
                 switchFragment(notificationFragment).commit();
+                break;
+            case 4:
+                if (mineFragment == null) {
+                    mineFragment = new MineFragment();
+                }
+                switchFragment(mineFragment).commit();
                 break;
         }
     }

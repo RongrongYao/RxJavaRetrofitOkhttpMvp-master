@@ -9,9 +9,9 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
-import com.example.gs.mvpdemo.Fragment.DashboardFragment;
-import com.example.gs.mvpdemo.Fragment.HomeFragment;
 import com.example.gs.mvpdemo.Fragment.NotificationFragment;
+import com.example.gs.mvpdemo.Fragment.NewsFragment;
+import com.example.gs.mvpdemo.Fragment.HomeFragment;
 import com.example.gs.mvpdemo.R;
 
 import java.util.ArrayList;
@@ -39,13 +39,17 @@ public class FragmentViewpagerActivity extends AppCompatActivity {
                                 mViewPager.setCurrentItem(0);
                                 //跳到对应ViewPager的page
                                 break;
-                            case R.id.navigation_dashboard:
+                            case R.id.navigation_news:
                                 mViewPager.setCurrentItem(1);
-
+                                break;
+                            case R.id.navigation_public:
+                                mViewPager.setCurrentItem(2);
                                 break;
                             case R.id.navigation_notifications:
-                                mViewPager.setCurrentItem(2);
-
+                                mViewPager.setCurrentItem(3);
+                                break;
+                            case R.id.navigation_mine:
+                                mViewPager.setCurrentItem(4);
                                 break;
                         }
                         return false;
@@ -74,9 +78,9 @@ public class FragmentViewpagerActivity extends AppCompatActivity {
 
         //底部导航栏有几项就有几个Fragment
         final ArrayList<Fragment> fgLists = new ArrayList<>(3);
-        fgLists.add(new HomeFragment());
-        fgLists.add(new DashboardFragment());
+        fgLists.add(new NewsFragment());
         fgLists.add(new NotificationFragment());
+        fgLists.add(new HomeFragment());
 
 
         //设置适配器用于装载Fragment

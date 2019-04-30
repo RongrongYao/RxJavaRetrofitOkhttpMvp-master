@@ -120,6 +120,11 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
                 intent5.setClass(this, SelectorActivity.class);
                 startActivity(intent5);
                 break;
+            case R.id.btn_layout:
+                Intent intent6 = new Intent();
+                intent6.setClass(this, LayoutActivity.class);
+                startActivity(intent6);
+                break;
 
         }
     }

@@ -28,6 +28,9 @@
         <activity android:name="com.example.gs.mvpdemo.activity.SelectorActivity">
 
         </activity>
+        <activity android:name="com.example.gs.mvpdemo.activity.LayoutActivity">
+
+        </activity>
     </application>
 
 </manifest>

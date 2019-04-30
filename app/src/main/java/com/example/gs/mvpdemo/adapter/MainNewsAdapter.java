@@ -64,7 +64,7 @@ public class MainNewsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             MainTopicViewHolder mainTopicViewHolder = new MainTopicViewHolder(v);
             return mainTopicViewHolder;
         } else {
-            View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item2, parent, false);
+            View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item3, parent, false);
             MainHeaderViewHolder mainNewsViewHolder = new MainHeaderViewHolder(v);
             return mainNewsViewHolder;
         }
